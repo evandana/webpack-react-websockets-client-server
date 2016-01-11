@@ -1,3 +1,6 @@
+# webpack-react-websockets-client-server
+Bare bones repo for connecting relevant technology. Intended to be used as a boilerplate
+
 Babel
 SASS
 Webpack
