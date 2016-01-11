@@ -1,6 +1,12 @@
 # webpack-react-websockets-client-server
 Bare bones repo for connecting relevant technology. Intended to be used as a boilerplate
 
+# TODO
+- Set up EC2 instance (Evan)
+- Set up Front End tech: Webpack, React, SASS, Babel (David)
+- Set up DB with fields and seed data (Evan)
+
+
 Babel
 SASS
 Webpack
