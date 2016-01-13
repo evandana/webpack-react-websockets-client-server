@@ -31,7 +31,12 @@ Start Web Server at system boot
 `sudo chkconfig httpd on`
 
 Public IP
-54.172.233.83
+52.90.140.202
+
+Connect to instance with: 
+TODO: `?`
+
+TODO: make key accessible on necessary computers
 
 Doc root
 `/var/www/html`
