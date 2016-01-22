@@ -55,6 +55,19 @@ http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
 TODO: Resolve the issues setting up the hooks
 https://issues.jenkins-ci.org/browse/JENKINS-20533
 
+Encountered permission issue when trying to access repo
+
+Tried `ssh git@github.com` but still enountered error
+
+Don't use a passphrase! https://gist.github.com/misterbrownlee/3708738
+Followed steps at http://stackoverflow.com/questions/12370921/ec2-cant-ssh-into-github
+
+Set up deploy key in github repo
+
+Initiated repo in `doc root`
+
+
+
 
 ### might need these later
 
