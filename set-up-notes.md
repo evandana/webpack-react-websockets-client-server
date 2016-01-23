@@ -16,6 +16,8 @@ To solve issues on El Capitan with Python:
 https://docs.docker.com/engine/installation/mac/
 
 # Simpler EC2 setup
+
+## Install Apache
 http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/install-LAMP.html
 
 Update Yum
@@ -34,7 +36,7 @@ Public IP
 52.90.140.202
 
 Connect to instance with: 
-TODO: `?`
+TODO: ` ssh -i ..../newkeypair.pem ec2-user@52.90.140.202`
 
 TODO: make key accessible on necessary computers
 
@@ -48,3 +50,34 @@ http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linu
 
 Hook up to Github
 http://sanketdangi.com/post/62740311628/integrate-jenkins-github-trigger-build-process
+http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
+
+TODO: Resolve the issues setting up the hooks
+https://issues.jenkins-ci.org/browse/JENKINS-20533
+
+Encountered permission issue when trying to access repo
+
+Tried `ssh git@github.com` but still enountered error
+
+Don't use a passphrase! https://gist.github.com/misterbrownlee/3708738
+Followed steps at http://stackoverflow.com/questions/12370921/ec2-cant-ssh-into-github
+
+Set up deploy key in github repo
+
+Initiated repo in `doc root`
+
+testing
+
+
+### might need these later
+
+Change the group ownership of /var/www and its contents to the www group.
+
+[ec2-user ~]$ sudo chown -R root:www /var/www
+Change the directory permissions of /var/www and its subdirectories to add group write permissions and to set the group ID on future subdirectories.
+
+[ec2-user ~]$ sudo chmod 2775 /var/www
+[ec2-user ~]$ find /var/www -type d -exec sudo chmod 2775 {} +
+Recursively change the file permissions of /var/www and its subdirectories to add group write permissions.
+
+[ec2-user ~]$ find /var/www -type f -exec sudo chmod 0664 {} +
