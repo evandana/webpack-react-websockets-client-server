@@ -68,6 +68,12 @@ Initiated repo in `doc root`
 
 testing
 
+Install Node/NPM
+http://iconof.com/blog/how-to-install-setup-node-js-on-amazon-aws-ec2-complete-guide/
+
+`sudo yum install nodejs npm --enablerepo=epel`
+
+
 
 ### might need these later
 

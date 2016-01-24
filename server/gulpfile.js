@@ -22,7 +22,7 @@ var port = process.env.PORT || config.defaultPort;
  * List the available gulp tasks
  */
 gulp.task('help', $.taskListing);
-gulp.task('default', ['help']);
+gulp.task('default', ['serve']);
 
 
 

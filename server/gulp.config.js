@@ -14,7 +14,7 @@ module.exports = function() {
 
         /* ----- Node settings ----- */
         nodeServer: server + 'server.js',
-        defaultPort: '8080'
+        defaultPort: '8040'
     };
 
     return config;
