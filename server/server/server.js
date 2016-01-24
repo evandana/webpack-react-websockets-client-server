@@ -11,7 +11,7 @@
 // -----------------------------------------------------------------------------
 // Start the HTTP Server and expose the RESTful API
 // -----------------------------------------------------------------------------
-var port = process.env.PORT || 8040;
+var port = process.env.PORT || 8080;
 
 var api = require('./adapter/rest/api');
 var server = require('http').createServer(api);

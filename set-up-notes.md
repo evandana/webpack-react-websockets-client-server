@@ -73,6 +73,9 @@ http://iconof.com/blog/how-to-install-setup-node-js-on-amazon-aws-ec2-complete-g
 
 `sudo yum install nodejs npm --enablerepo=epel`
 
+`git pull origin server`
+
+http://www.lauradhamilton.com/how-to-set-up-a-nodejs-web-server-on-amazon-ec2
 
 
 ### might need these later
