@@ -48,6 +48,17 @@ Doc root
 Set up
 http://sanketdangi.com/post/62715793234/install-configure-jenkins-on-amazon-linux
 
+Change port
+```
+vim /etc/sysconfig/jenkins
+
+# Port Jenkins is listening on.
+# Set to -1 to disable
+#
+JENKINS_PORT="8080"
+```
+
+
 Hook up to Github
 http://sanketdangi.com/post/62740311628/integrate-jenkins-github-trigger-build-process
 http://fourkitchens.com/blog/article/trigger-jenkins-builds-pushing-github
