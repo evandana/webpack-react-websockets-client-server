@@ -74,12 +74,14 @@ function log(msg) {
     if (typeof msg === 'object') {
         for (var item in msg) {
             if (msg.hasOwnProperty(item)) {
-                $.util.log($.util.colors.blue(msg[item]));
+                console.log(msg[item]);
+                //$.util.log($.util.colors.blue(msg[item]));
             }
         }
     }
     else {
-        $.util.log($.util.colors.blue(msg));
+        console.log(msg);
+        //$.util.log($.util.colors.blue(msg));
     }
 }
 
