@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+  </head>
+  <body>
+    <p>look in the console</p>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      
+      var socket = io();
+
+      socket.on('dataUpdate', function(msg){
+        console.log(msg);
+      });
+
+    </script>
+  </body>
+</html>
