@@ -11,18 +11,35 @@ import ListingTable from 'components/listingTable/listingTable';
 let ListingPage = React.createClass({
     
     getInitialState : function () {
-        return {
-            allAuctions: AuctionStore.getAll()
-        };
+        return getAuctionState();
     },
     
+    componentDidMount: function() {
+        AuctionStore.addChangeListener(this.onChange);
+    },
+
     render: function() {
         return (
             <div id="listing-page" className="listing-page-l">
-                <ListingTable allAuctions={this.state.allAuctions} />
+                <ListingTable
+                    listings={this.state.listings} 
+                    listingHeaders={this.state.listingHeaders}
+                />
             </div>
         );
+    },
+    
+    onChange: function() {
+        this.setState(getAuctionState());
     }
+    
 });
 
 export default ListingPage;
+
+function getAuctionState () {
+    return {
+        listings: AuctionStore.getAll(),
+        listingHeaders: AuctionStore.getAllHeaders()
+    };
+}
