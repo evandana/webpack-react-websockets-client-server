@@ -3,11 +3,11 @@ import AuctionConstants from 'constants/AuctionConstants';
 
 let AuctionActions = {
     
-    sortByCol: function(colIndex) {
-        console.log("Sort Action");
+    sortByCol: function(key, order) {
         AppDispatcher.handleViewAction({
             actionType: AuctionConstants.SORT_BY_COL,
-            index: colIndex
+            key: key,
+            order: order
         });
     }
     
