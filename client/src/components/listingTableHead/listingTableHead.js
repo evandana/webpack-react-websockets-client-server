@@ -23,7 +23,7 @@ ListingTableHead = React.createClass({
     },
     
     sortByCol: function(key) {
-        AuctionActions.sortByCol(key, curOrder);
+        AuctionActions.sortByCol(key, sortOrder);
         sortOrder = sortOrder === 'ascend' ? 'descend' : 'ascend';
     }
     
