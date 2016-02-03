@@ -6,7 +6,13 @@ AppDispatcher.handleViewAction = function(action) {
     source: 'VIEW_ACTION',
     action: action
   });
+};
+
+AppDispatcher.handleDataAction = function(action) {
+  this.dispatch({
+    source: 'DATA_ACTION',
+    action: action
+  });
 }
 
 export default AppDispatcher;
-

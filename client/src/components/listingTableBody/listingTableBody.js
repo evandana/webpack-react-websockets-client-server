@@ -1,16 +1,33 @@
+// Libraries
 import React from 'react';
+// Styles
 import './listingTableBody.scss';
 // React Components
 import ListingRow from 'components/listingRow/listingRow';
+import DetailRow from 'components/detailRow/detailRow';
 
 let ListingTableBody = {};
 
 ListingTableBody = React.createClass({
-    render: function() {
+    
+    render () {
+
+        let componentList = [];
+
+        this.props.listings.forEach( (obj, index) => { 
+            let listRow = <ListingRow key={index} data={obj} />,
+                detailRow = <DetailRow key={index + 'a'} data={obj} />;
+                componentList.push(listRow);
+                if( obj.detailState === 'OPEN' ) {
+                    componentList.push(detailRow);
+                }
+
+        });
+
 
         return (
             <tbody>{
-                this.props.listings.map( (obj, index) => <ListingRow key={index} data={obj} /> )
+                componentList
             }</tbody>
         ); 
         
