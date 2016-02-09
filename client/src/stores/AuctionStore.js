@@ -3,6 +3,7 @@ import { EventEmitter } from 'events';
 import assign from 'object-assign';
 import AuctionConstants from 'constants/AuctionConstants';
 import Immutable from 'immutable';
+import rw from 'utils/firebaseAdapter';
 
 let _auctions,
     _auctionHeaders,
@@ -18,7 +19,7 @@ AuctionRecord = Immutable.Record(require("json!../stubs/auctions/auctionRecord.j
 _auctions = loadData(stubJSON);
 _auctionHeaders = getAuctionHeaders();
 
-AuctionStore = assign({}, EventEmitter.prototype, {
+AuctionStore = assign({}, EventEmitter.prototype, {rwAdapter: rw}, {
     
     getAll : () => _auctions,
     
@@ -34,6 +35,9 @@ AuctionStore = assign({}, EventEmitter.prototype, {
         let actionType = dispatch.action.actionType;
 
         switch(actionType) {
+            case AuctionConstants.ADD_AUCTION:
+                addAuction();
+                break;
             case AuctionConstants.TOGGLE_AUCTION_ROW:
                 _auctions = toggleAuctionRow(_auctions, dispatch.action.id);
                 AuctionStore.emitChange();
@@ -55,6 +59,11 @@ AuctionStore = assign({}, EventEmitter.prototype, {
 });
 
 export default AuctionStore;
+
+function addAuction() {
+     AuctionStore.rwAdapter.addAuction();
+     
+}
 
 function toggleAuctionRow(list, id) {
     list = list.update(

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "watch": "webpack-dev-server --hot --inline --progress --colors",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -27,6 +28,7 @@
     "bluebird": "^3.1.1",
     "event-emitter": "^0.3.4",
     "file-loader": "^0.8.5",
+    "firebase": "^2.4.0",
     "flux": "^2.1.1",
     "immutable": "^3.7.6",
     "json-load": "^1.0.1",

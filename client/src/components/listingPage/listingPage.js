@@ -6,6 +6,8 @@ import './listingPage.scss';
 import AuctionStore from 'stores/AuctionStore';
 // React Components
 import ListingTable from 'components/listingTable/listingTable';
+import ListingManager from 'components/listingManager/listingManager';
+import UserPanel from 'components/userPanel/userPanel';
 
 let ListingPage = React.createClass({
     
@@ -20,11 +22,14 @@ let ListingPage = React.createClass({
     render () {
         return (
             <div id="listing-page" className="listing-page-l">
+                <UserPanel />
                 <h3>Auctions</h3>
                 <ListingTable
                     listings={this.state.listings} 
                     listingHeaders={this.state.listingHeaders}
                 />
+                <br />
+                <ListingManager />
             </div>
         );
     },
