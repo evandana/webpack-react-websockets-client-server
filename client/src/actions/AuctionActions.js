@@ -3,6 +3,12 @@ import AuctionConstants from 'constants/AuctionConstants';
 
 let AuctionActions = {
     
+    addAuction: function() {
+        AppDispatcher.handleViewAction({
+            actionType: AuctionConstants.ADD_AUCTION
+        })
+    },
+    
     toggleAuctionRow: function(id) {
         AppDispatcher.handleViewAction({
             actionType: AuctionConstants.TOGGLE_AUCTION_ROW,
